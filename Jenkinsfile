@@ -12,7 +12,7 @@ node {
       '''
    }
    stage('deploy') {
-      azureWebAppPublish a8ccb851-f17a-4c80-8cdd-07400a5904ac: env.AZURE_CRED_ID,
-      jenkins: env.RES_GROUP, vs1347jenkins: env.WEB_APP, filePath: "**/todo.zip"
+      azureWebAppPublish azureCredentialsId: env.AZURE_CRED_ID,
+      jenkins: env.RES_GROUP, appName: env.WEB_APP, filePath: "**/todo.zip"
    }
 }
